@@ -15,3 +15,7 @@
 .header__burger.active #lineThree {
     transform: rotate(-45deg);
 }
+
+.header__burger-line {
+    flex-shrink: 0;
+}

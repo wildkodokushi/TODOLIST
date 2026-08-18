@@ -29,6 +29,7 @@ class HeaderLogo {
             styles: {
                 width: '50px',
                 height: '50px',
+                flexShrink: '0',
                 backgroundColor: this.rootVarCss.colorDark,
                 transitionDuration: this.rootVarCss.transitionDuration
             }
