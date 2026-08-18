@@ -1,8 +1,14 @@
-@import url(./styles/preloader-animation.css);
-@import url(./styles/form.css);
-@import url(./styles/header-animation.css);
-@import url(./styles/preloader.css);
+@import url(./styles/veriables.css);
 @import url(./styles/globals.css);
-@import url(./styles/burger-menu.css);
-@import url(./styles/modal.css);
-@import url(./styles/button-switch-theme.css);
+
+@import url(./styles/components/burger-menu.css);
+@import url(./styles/components/button-switch-theme.css);
+@import url(./styles/components/form.css);
+@import url(./styles/components/modal.css);
+@import url(./styles/components/preloader.css);
+@import url(./styles/components/todo-field.css);
+@import url(./styles/components/todo-item.css);
+@import url(./styles/components/todo.css);
+
+@import url(./styles/animation/header-animation.css);
+@import url(./styles/animation/preloader-animation.css);

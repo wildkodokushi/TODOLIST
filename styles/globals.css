@@ -10,7 +10,10 @@
 
     --color-black: var(--color-dark);
     --color-white: var(--color-light);
+
     --color-accent: #e94141;
+
+    --input-height: 40px;
 
     --transition-duration: 0.3s ease-in-out;
 }
@@ -22,7 +25,7 @@ html.is-dark-theme {
 
 body {
     position: relative;
-    /* overflow: hidden; */
+    /* overflow: hidden; */ 
     background-color: var(--color-white);
     color: var(--color-black);
 }
@@ -47,7 +50,12 @@ a, button, input {
     border-color: var(--color-accent);
 }
 
+.header__logo:hover {
+    background-color: var(--color-accent) !important;
+}
+
 :focus-visible {
     outline: 2px dashed var(--color-black);
     outline-offset: 2px;
+    transition-duration: 0s !important;
 }

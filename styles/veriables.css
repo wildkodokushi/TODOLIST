@@ -1,0 +1,13 @@
+:root {
+    --color-light: #fff;
+    --color-dark: #202020;
+
+    --color-black: var(--color-dark);
+    --color-white: var(--color-light);
+
+    --color-accent: #e94141;
+
+    --input-height: 40px;
+
+    --transition-duration: 0.3s ease-in-out;
+}
