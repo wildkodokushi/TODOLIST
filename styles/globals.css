@@ -1,6 +1,4 @@
 html.is-dark-theme {
-    --font-family: 'JetBrainsMono', sans-serif;
-
     --color-black: var(--color-light);
     --color-white: var(--color-dark);
 

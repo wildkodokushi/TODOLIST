@@ -1,0 +1,10 @@
+@media(max-width: 768px) {
+    .header {
+        height: 75px !important;
+    }
+
+    /* .header__exit {
+        content: 'D';
+        content: url(../assets/icon/icon-check__dark.svg);
+    } */
+}

@@ -23,6 +23,10 @@ class Header {
         afterbegin: 'afterbegin',
         beforeend: 'beforeend'
     }
+
+    stateClasses =  {
+        isVisible: 'is-visible'
+    }
     
     constructor(parent) {
         this.parent = parent
@@ -37,7 +41,7 @@ class Header {
 
     animateHeader() {
         if(this.element) {
-            this.element.classList.add('is-visible')
+            this.element.classList.add(this.stateClasses.isVisible)
         }
     }
 
