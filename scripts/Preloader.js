@@ -8,6 +8,12 @@ class Preloader {
         this.bindEvents()
     }
 
+    rootVarCss = {
+        colorDark: 'var(--color-black)',
+        colorLight: 'var(--color-white)',
+    }
+
+
     newEventPreloader() {
         this.element.addEventListener('animationend', (event) => {
             if(event.animationName === 'preloader') {
@@ -37,9 +43,9 @@ class Preloader {
                 inset: '0',
                 width: '100vw',
                 height: '100vh',
-                backgroundColor: 'rgb(45, 168, 107)',
+                backgroundColor: this.rootVarCss.colorDark,
                 zIndex: '10000',
-                animation: 'preloader 0s forwards'
+                animation: 'preloader 2s forwards'
             }
         })
     }
