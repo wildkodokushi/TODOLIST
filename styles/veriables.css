@@ -4,10 +4,16 @@
 
     --color-black: var(--color-dark);
     --color-white: var(--color-light);
+    --color-gray: #b3b3b3;
 
     --color-accent: #e94141;
 
     --input-height: 40px;
+
+    --border-radius: 8px;
+    
+    --border-mini-elements: 2px dashed var(--color-black);
+    --border-form: 5px dashed var(--color-black);
 
     --transition-duration: 0.3s ease-in-out;
 }

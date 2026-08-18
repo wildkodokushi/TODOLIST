@@ -1,0 +1,61 @@
+.todo {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    gap: 24px;
+    padding: 24px;
+    width: 100%;
+    max-width: 404px;
+    border: var(--border-form);
+    border-radius: var(--border-radius);
+}
+
+.todo__title {
+    text-align: center;
+    font-weight: 600;
+    /* font-size: 24px; */
+    line-height: 120%;
+    letter-spacing: -0.02em;
+}
+
+.todo__form {
+    display: flex;
+    gap: 16px;
+}
+
+.todo__field {
+    width: 100%;
+}
+
+.todo__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo__delete-all-button {
+    &:not(.is-visible) {
+        opacity: 0;
+        visibility: hidden;    
+    }
+}
+
+.todo__list,
+.todo__empty-message {
+    &:empty {
+        display: none;
+    }
+}
+
+.todo__list {
+    --todoListGap: 8px;
+
+    display: grid;
+    row-gap: var(--todoListGap);
+}
+
+.todo__empty-message {
+    text-align: center;
+    color: var(--color-accent);
+}
