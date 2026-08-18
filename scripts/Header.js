@@ -5,6 +5,7 @@ import HeaderMenu from "./HeaderMenu.js"
 import BurgerMenu from "./BurgerMenu.js"
 import ThemeSwitcher from './SwitchTheme.js'
 import Modal from './Modal.js'
+import Preloader from "./Preloader.js"
 
 class Header {
     selectors = {
@@ -22,7 +23,7 @@ class Header {
         afterbegin: 'afterbegin',
         beforeend: 'beforeend'
     }
-
+    
     constructor(parent) {
         this.parent = parent
         this.element = null
@@ -30,8 +31,21 @@ class Header {
         this.action = null
 
         this.render()
+        this.preloaderClose()
     }
 
+    animateHeader() {
+        if(this.element) {
+            this.element.classList.add('is-visible')
+        }
+    }
+
+    preloaderClose() {
+        document.addEventListener('preloaderClose', () => {
+            this.animateHeader()
+        })
+    }
+    
     render() {
         const rootElementProject = document.querySelector(this.selectors.rootProject)
 

@@ -1,4 +1,4 @@
-/* .header:not(.is-visible) {
+.header:not(.is-visible) {
     opacity: 0;
 }
 .header:not(.is-visible):nth-child(odd) {
@@ -6,4 +6,4 @@
 }
 .header:not(.is-visible):nth-child(even) {
     translate: 50vw;
-} */
+}
