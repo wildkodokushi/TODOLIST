@@ -5,10 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JWA</title>
     <link rel="stylesheet" href="./index.css">
+    <script src="./scripts/main.js" type="module"></script>
 </head>
 <body>
     <div id="root" data-js-root>
-        <form action="./register" method="post" novalidate data-js-form>
+        <div class="todo" data-js-todo>
+            <h1 class="todo__title">To Do List</h1>
+            <form class="todo__form" data-js-todo-new-task-form>
+                <div class="todo__field field">
+                    <label class="field__label" for="new-task">New task title</label>
+                    <input 
+                        type="text" 
+                        class="todo__field-input" 
+                        name="new-task" 
+                        id="new-task" 
+                        placeholder=" "
+                        autocomplete="off"
+                        data-js-todo-new-task-input
+                    >
+                </div>
+                <button type="submit" class="todo__field-button button">
+                    Add
+                </button>
+            </form>
+            <form class="todo__form" data-js-todo-search-task-form>
+                <div class="todo__field field">
+                    <label class="field__label" for="search-task">Search task</label>
+                    <input 
+                        type="search" 
+                        class="todo__field-input" 
+                        name="search-task" 
+                        id="search-task" 
+                        placeholder=" "
+                        data-js-todo-search-task-input
+                    >
+                </div>
+            </form>
+            <div class="todo__info">
+                <div class="todo__total-task">
+                    Total Tasks: <span data-js-todo-total-task>0</span>
+                </div>
+                <button 
+                    class="todo__delete-all-button" 
+                    type="button"
+                    data-js-todo-delete-all-button
+                >
+                    Delete All
+                </button>
+            </div>
+            <ul class="todo__list" data-js-todo-list>
+                <li class="todo__item todo-item" data-js-todo-item>
+                    <input 
+                        class="todo__item-checkbox" 
+                        type="checkbox" 
+                        name="checkbox"
+                        id="todo-1"
+                        data-js-todo-item-checkbox
+                    >
+                    <label 
+                        class="todo-item__label" 
+                        for="todo-1"
+                        data-js-todo-item-label
+                    >
+                        Todo 1
+                    </label>
+                    <button 
+                        class="todo-item__delete-button" 
+                        type="button"
+                        aria-label="Delete"
+                        title="Delete"
+                        data-js-todo-item-delete-button
+                    >
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 5L5 15M5 5L15 15" stroke="#757575" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </li>
+                <li class="todo__item todo-item" data-js-todo-item>
+                    <input 
+                        class="todo__item-checkbox" 
+                        type="checkbox" 
+                        name="checkbox"
+                        id="todo-1"
+                        data-js-todo-item-checkbox
+                    >
+                    <label 
+                        class="todo-item__label" 
+                        for="todo-1"
+                        data-js-todo-item-label
+                    >
+                        Todo 1
+                    </label>
+                    <button 
+                        class="todo-item__delete-button" 
+                        type="button"
+                        aria-label="Delete"
+                        title="Delete"
+                        data-js-todo-item-delete-button
+                    >
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 5L5 15M5 5L15 15" stroke="#757575" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+            <div class="todo__empty-message" data-js-empty-message></div>
+        </div>
+        <form action="./register" class="form__for-user" method="post" novalidate data-js-form>
             <div class="d-flex">
                 <label for="login">Логин</label>
                 <input 
@@ -78,24 +181,20 @@
 
             <div class="field checkbox">
                 <input 
-                    class="checkbox__control"
-                    type="checkbox"
-                    name="agreement"
-                    id="agreement"
-                    required
-                    aria-errormessage="agreement-errors"
+                class="checkbox__control"
+                type="checkbox"
+                name="agreement"
+                id="agreement"
+                required
+                aria-errormessage="agreement-errors"
                 >
                 <label class="field__label checkbox__label" for="agreement">Согласен на всё</label> <br>
-
+                
                 <span class="field__errors" id="agreement-errors" data-js-form-field-errors></span>
             </div>
-
+            
             <input type="submit" name="submit" value="Зарегистрироваться">
         </form>
-        <div class="todo">
-
-        </div>
     </div>
-    <script src="./scripts/main.js" type="module"></script>
 </body>
 </html>
