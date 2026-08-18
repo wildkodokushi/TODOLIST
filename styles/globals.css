@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-light: #fff;
+    --color-dark: #202020;
+
+    --color-black: var(--color-dark);
+    --color-white: var(--color-light);
+
+    --transition-duration: 0.3s ease-in-out;
+}
+
+html.is-dark-theme {
+    --color-black: var(--color-light);
+    --color-white: var(--color-dark);
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-white);
+    color: var(--color-main);
+}
+
+a, button {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    background-color: transparent;
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 2px dashed var(--color-dark);
+    outline-offset: 2px;
+}

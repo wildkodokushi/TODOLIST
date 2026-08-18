@@ -1,0 +1,11 @@
+.preloader::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px dashed #fff;
+    animation: circle 1s ease-in-out infinite;
+}

@@ -1,0 +1,15 @@
+.header__switch::after {
+    content: url(../assets/icon/switch-theme-dark.svg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: var(--transition-duration);
+    transform-origin: center;
+}
+
+html.is-dark-theme .header__switch::after {
+    content: url(../assets/icon/switch-theme-light.svg);
+    transform: rotate(540deg);
+}

@@ -1,0 +1,66 @@
+form {
+    width: 100%;
+    min-width: 250px;
+    max-width: 300px;
+    border: 5px dashed #15fc00;
+    padding-block: 30px;
+    padding-inline: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    gap: 10px;
+}
+
+.d-flex input, textarea, .radios, input[type="submit"] {
+    border: 2px dashed #ff0095;
+    background-color: transparent;
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.d-flex input {
+    display: inline-flex;
+    align-items: center;
+    height: 25px;
+}
+
+.d-flex input, textarea {
+    padding-left: 5px;
+    font-family: inherit;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+    border: none;
+}
+
+textarea {
+    max-width: 293px;
+    min-width: 293px;
+    max-height: 40px;
+    min-height: 40px;
+}
+
+input[type="radio"],
+input[type="checkbox"],
+input[type="submit"] {
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    height: 35px;
+    font-family: inherit;
+}
+
+.field__errors {
+    font-size: 12px;
+    color: red;
+}

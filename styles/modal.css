@@ -1,0 +1,8 @@
+.modal.active {
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: #5c377e !important;
+    opacity: 1 !important;
+    inset: 0 !important;
+    z-index: 100 !important;
+}

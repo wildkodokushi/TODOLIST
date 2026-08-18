@@ -1,0 +1,17 @@
+.header__burger.active .header__burger-line {
+    position: absolute;
+    top: 50%;
+}
+
+.header__burger.active #lineOne {
+    transform: rotate(45deg);
+}
+
+.header__burger.active #lineSeconde {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.header__burger.active #lineThree {
+    transform: rotate(-45deg);
+}
