@@ -1,3 +1,3 @@
 # ПРОСТОЙ To Do List на чистом JavaScript
 
-![alt text](image.png)
+![To Do List Screenshot](./image.png)
