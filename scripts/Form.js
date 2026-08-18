@@ -1,8 +1,11 @@
+import Todo from './Todo.js'
+
 class FormsValidation {
     selectors = {
         form: '[data-js-form]',
         fieldErrors: '[data-js-form-field-errors]',
-        sessionExitButton: '[data-js-session-exit-button]'
+        sessionExitButton: '[data-js-session-exit-button]',
+        rootToDo: '[data-js-todo]'
     }
 
     errorMessages = {
@@ -18,8 +21,13 @@ class FormsValidation {
 
     constructor() {
         this.bindEvent()
+
         this.savedForm = null
         this.formParent = null
+
+        this.todoParent = null
+        this.savedTodo = null
+
         this.checkAuth()
     }
 
@@ -117,12 +125,18 @@ class FormsValidation {
             if(sessionExitButton) {
                 sessionExitButton.classList.add(this.stateClasses.isVisible)
             }
+
+            if (this.todoParent && this.savedTodo) {
+                this.todoParent.append(this.savedTodo)
+                new Todo()
+            }
         }
     }
 
     onExit(event) {
         const { target } = event
         const isLogoutButton = target.matches(this.selectors.sessionExitButton)
+        const toDoList = document.querySelector(this.selectors.rootToDo)
 
         if(!isLogoutButton) {
             return
@@ -139,14 +153,33 @@ class FormsValidation {
         if(sessionExitButton) {
             sessionExitButton.classList.remove(this.stateClasses.isVisible)
         }
-
+        
         if(this.formParent && this.savedForm) {
             this.formParent.append(this.savedForm)
         }
+
+        if(toDoList) {
+            this.todoParent = toDoList.parentElement
+            this.savedTodo = toDoList
+    
+            toDoList.remove()
+        }
+
     }
 
     checkAuth() {
         const hasAuthData = Object.keys(localStorage).some(key => key.startsWith('form_'))       
+        const toDoList = document.querySelector(this.selectors.rootToDo)
+
+        if(hasAuthData === false) {
+            if(toDoList) {
+                this.todoParent = toDoList.parentElement
+                this.savedTodo = toDoList
+                
+                toDoList.remove()
+            }
+        }
+
         if(hasAuthData) {
             const formElement = document.querySelector(this.selectors.form)
             const sessionExitButton = document.querySelector(this.selectors.sessionExitButton)
@@ -161,6 +194,8 @@ class FormsValidation {
             if(sessionExitButton) {
                 sessionExitButton.classList.add(this.stateClasses.isVisible)
             }
+
+            new Todo()
         }
     }
 
