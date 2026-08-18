@@ -24,10 +24,16 @@ a, button, input {
     padding-inline: 12px;
     height: 30px;
     border: 2px dashed;
-}
 
-.button:hover {
-    border-color: var(--color-accent);
+    &:hover {
+        border-color: var(--color-accent); 
+    }
+
+    &:focus {
+        outline: none;
+        border-width: 3px;
+        border-color: var(--color-accent);
+    }
 }
 
 .header__logo:hover {

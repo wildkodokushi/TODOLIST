@@ -13,7 +13,7 @@
     --border-radius: 8px;
     
     --border-mini-elements: 2px dashed var(--color-black);
-    --border-form: 5px dashed var(--color-black);
+    --border-form: 4px dashed var(--color-black);
 
     --transition-duration: 0.3s ease-in-out;
 }

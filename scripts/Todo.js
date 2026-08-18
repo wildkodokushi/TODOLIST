@@ -3,7 +3,7 @@ class Todo {
         root: '[data-js-todo]',
         newTaskForm: '[data-js-todo-new-task-form]',
         newTaskInput: '[data-js-todo-new-task-input]',
-        searchTaskForm: '[data-js-todo-new-task-form]',
+        searchTaskForm: '[data-js-todo-search-task-form]',
         searchTaskInput: '[data-js-todo-search-task-input]',
         totalTask: '[data-js-todo-total-task]',
         deleteAllButton: '[data-js-todo-delete-all-button]',
@@ -11,13 +11,13 @@ class Todo {
         item: '[data-js-todo-item]',
         itemCheckbox: '[data-js-todo-item-checkbox]',
         itemLabel: '[data-js-todo-item-label]',
-        itemDeleteButton: '[data-js-todo-delete-button]',
+        itemDeleteButton: '[data-js-todo-item-delete-button]',
         emptyMessage: '[data-js-empty-message]',
     }
 
     stateClasses = {
-        isVisible: 'isVisible',
-        isDisappearing: 'isDisappearing'
+        isVisible: 'is-visible',
+        isDisappearing: 'is-disappearing'
     }
 
     localStorageKey = 'todo-items'
@@ -76,7 +76,7 @@ class Todo {
 
         const items = this.state.filteredItem ?? this.state.items
 
-        this.listElement.innerHTML = items.map((id, title, isChecked) => {`
+        this.listElement.innerHTML = items.map(({id, title, isChecked}) => `
             <li class="todo__item todo-item" data-js-todo-item>
                 <input 
                     class="todo-item__checkbox" 
@@ -88,7 +88,7 @@ class Todo {
                 >
                 <label 
                     class="todo-item__label" 
-                    for="${id}}"
+                    for="${id}"
                     data-js-todo-item-label
                 >
                     ${title}
@@ -105,14 +105,14 @@ class Todo {
                     </svg>
                 </button>
             </li>
-        `}).join('')
+        `).join('')
 
         const isEmptyFilteredItems = this.state.filteredItem?.length === 0
         const isEmptyItems = this.state.items.length === 0
 
         this.emptyMessageElement.textContent = 
-            isEmptyFilteredItems ? 'Task not found'
-                : isEmptyItems ? 'There are not tasks yet'
+            isEmptyFilteredItems ? 'Tasks not found'
+                : isEmptyItems ? 'There are no tasks yet'
                     : ''
     }
 
@@ -143,11 +143,11 @@ class Todo {
                 }
             }
 
-            return item
-            
-            this.saveItemsToLocalStorage()
-            this.render()
+            return item       
         })
+
+        this.saveItemsToLocalStorage()
+        this.render()
     }
 
     filter() {
@@ -216,7 +216,7 @@ class Todo {
             itemElement.classList.add(this.stateClasses.isDisappearing)
 
             setTimeout(() => {
-                this.deleteItem(this.itemCheckboxElement.id)
+                this.deleteItem(itemCheckboxElement.id)
             }, 400)
         }
     }
