@@ -10,6 +10,7 @@
 
     --color-black: var(--color-dark);
     --color-white: var(--color-light);
+    --color-accent: #e94141;
 
     --transition-duration: 0.3s ease-in-out;
 }
@@ -21,20 +22,32 @@ html.is-dark-theme {
 
 body {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: var(--color-white);
-    color: var(--color-main);
+    color: var(--color-black);
 }
 
-a, button {
+a, button, input {
     text-decoration: none;
     cursor: pointer;
     font-family: inherit;
     background-color: transparent;
-    color: inherit;
+    color: var(--color-black);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding-inline: 10px;
+    height: 30px;
+    border: 2px dashed;
+}
+
+.button:hover {
+    border-color: var(--color-accent);
 }
 
 :focus-visible {
-    outline: 2px dashed var(--color-dark);
+    outline: 2px dashed var(--color-black);
     outline-offset: 2px;
 }

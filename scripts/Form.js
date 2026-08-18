@@ -2,6 +2,7 @@ class FormsValidation {
     selectors = {
         form: '[data-js-form]',
         fieldErrors: '[data-js-form-field-errors]',
+        sessionExitButton: '[data-js-session-exit-button]'
     }
 
     errorMessages = {
@@ -11,8 +12,15 @@ class FormsValidation {
         tooLong: ({ maxLength }) => `Слишком длинное значение, максимальное количество сиволов - ${maxLength}!`,
     }
 
+    stateClasses = {
+        isVisible: 'is-visible'
+    }
+
     constructor() {
         this.bindEvent()
+        this.savedForm = null
+        this.formParent = null
+        this.checkAuth()
     }
 
     manageErrors(fieldControllElement, errorMessages) {
@@ -87,8 +95,72 @@ class FormsValidation {
         })
 
         if(!isFormValid) {
-            event.preventDefault();
+            event.preventDefault()
             firstInvalidFieldControl.focus()
+        } else {
+            event.preventDefault()
+
+            const formData = new FormData(target)
+
+            for (const [key, value] of formData.entries()) {
+                localStorage.setItem(`form_${key}`, value)
+            }
+
+            this.formParent = target.parentElement
+            this.savedForm = target
+            
+            target.reset()
+            target.remove()
+
+            const sessionExitButton = document.querySelector(this.selectors.sessionExitButton)
+            
+            if(sessionExitButton) {
+                sessionExitButton.classList.add(this.stateClasses.isVisible)
+            }
+        }
+    }
+
+    onExit(event) {
+        const { target } = event
+        const isLogoutButton = target.matches(this.selectors.sessionExitButton)
+
+        if(!isLogoutButton) {
+            return
+        }
+
+        for (const key of Object.keys(localStorage)) {
+            if(key.startsWith('form_')) {
+                localStorage.removeItem(key)
+            }
+        }
+
+        const sessionExitButton = document.querySelector(this.selectors.sessionExitButton)
+
+        if(sessionExitButton) {
+            sessionExitButton.classList.remove(this.stateClasses.isVisible)
+        }
+
+        if(this.formParent && this.savedForm) {
+            this.formParent.append(this.savedForm)
+        }
+    }
+
+    checkAuth() {
+        const hasAuthData = Object.keys(localStorage).some(key => key.startsWith('form_'))       
+        if(hasAuthData) {
+            const formElement = document.querySelector(this.selectors.form)
+            const sessionExitButton = document.querySelector(this.selectors.sessionExitButton)
+
+            if(formElement) {
+                this.formParent = formElement.parentElement
+                this.savedForm = formElement
+
+                formElement.remove()
+            }
+
+            if(sessionExitButton) {
+                sessionExitButton.classList.add(this.stateClasses.isVisible)
+            }
         }
     }
 
@@ -100,6 +172,8 @@ class FormsValidation {
         document.addEventListener('change', (event) => this.onChange(event))
 
         document.addEventListener('submit', (event) => this.onSubmit(event))
+
+        document.addEventListener('click', (event) => this.onExit(event))
     }
 }
 

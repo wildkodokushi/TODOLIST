@@ -39,7 +39,7 @@ class BurgerMenu {
             parent: this.parent,
             styles: {
                 position: 'relative',
-                width: '30px',
+                width: '25px',
                 height: '20px',
                 display: 'flex',
                 flexDirection: 'column',

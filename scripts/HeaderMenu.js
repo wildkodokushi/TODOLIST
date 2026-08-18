@@ -12,7 +12,7 @@ class HeaderMenu {
 
     rootVarCss = {
         colorDark: 'var(--color-black)',
-        colorAccent: '#e94141',
+        colorAccent: 'var(--color-accent)',
     }
 
     menuLinks = [

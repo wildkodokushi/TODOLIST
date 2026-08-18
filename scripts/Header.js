@@ -29,6 +29,7 @@ class Header {
         this.element = null
         this.inner = null
         this.action = null
+        this.exitButton = null
 
         this.render()
         this.preloaderClose()
@@ -57,6 +58,7 @@ class Header {
                 width: '100%',
                 height: '100px',
                 position: 'sticky',
+                backdropFilter: 'blur(2px)',
                 top: '0',
                 zIndex: '1000',
                 transition: this.rootVarCss.transitionDuration
@@ -90,6 +92,19 @@ class Header {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '10px'
+            }
+        })
+
+        this.exitButton = createElement('button', {
+            className: 'header__exit button',
+            parent: this.action,
+            text: 'Выйти',
+            postion: this.position.afterbegin,
+            attributes: {
+                'data-js-session-exit-button': ''
+            },
+            styles: {
+                display: 'none'
             }
         })
 

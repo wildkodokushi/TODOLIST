@@ -5,7 +5,7 @@ import Preloader from './Preloader.js'
 
 const rootProject = document.querySelector('[data-js-root]')
 
+new CustomFont()
 new Header(rootProject)
 new FormsValidation()
-new CustomFont()
 new Preloader(rootProject)
