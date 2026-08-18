@@ -35,7 +35,7 @@ class FormsValidation {
         const fieldErrorsElement = fieldControllElement.parentElement.querySelector(this.selectors.fieldErrors)
 
         fieldErrorsElement.innerHTML = errorMessages
-            .map((message => `<span class="field__error">${message}</span>`))
+            .map((message => `<span class="field__errors">${message}</span>`))
             .join('')
     }
 

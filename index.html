@@ -56,10 +56,12 @@
             <ul class="todo__list" data-js-todo-list></ul>
             <div class="todo__empty-message" data-js-empty-message></div>
         </div>
-        <form action="./register" class="form__for-user" method="post" novalidate data-js-form>
-            <div class="d-flex">
-                <label for="login">Логин</label>
-                <input 
+        <form action="./register" class="form" method="post" novalidate data-js-form>
+            <h1 class="form__title">Registration</h1>
+            <div class="form__field">
+                <label class="form__field-label" for="login">Логин</label>
+                <input
+                    class="form__field-input"
                     type="text" 
                     name="login" 
                     id="login" 
@@ -67,14 +69,15 @@
                     aria-errormessage="login-errors"
                     minlength="6"
                     maxlength="18"
+                    placeholder=" "
                 >
 
                 <span class="field__errors" id="login-errors" data-js-form-field-errors></span>
             </div>
-
-            <div class="d-flex">
-                <label for="password">Пароль</label>
+            <div class="form__field">
+                <label class="form__field-label" for="password">Пароль</label>
                 <input 
+                    class="form__field-input"
                     type="password" 
                     name="password" 
                     id="password" 
@@ -82,18 +85,17 @@
                     aria-errormessage="password-errors"
                     minlength="8"
                     maxlength="16"
+                    placeholder=" "
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}"
                     title="Пароль должен быть длиной от 8 до 16 символов, включать как минимум одну цифру, одну букву в нижнем и одну букву в верхнем регистре"
                 >
                 
                 <span class="field__errors" id="password-errors" data-js-form-field-errors></span>                
             </div>
-
-            <div class="d-flex">
-                <label for="about">О себе</label>
-                <textarea name="about" id="about"></textarea>
+            <div class="field__textarea">
+                <label class="field__textarea-label" for="about">О себе</label>
+                <textarea class="field__textarea-input" name="about" id="about" placeholder=" "></textarea>
             </div>
-
             <fieldset class="radios">
                 <legend class="radios__legend">
                     Ваш пол
@@ -123,22 +125,21 @@
 
                 <span class="field__errors" id="gender-errors" data-js-form-field-errors></span>
             </fieldset>
-
-            <div class="field checkbox">
+            <div class="field__checkbox checkbox">
                 <input 
-                class="checkbox__control"
-                type="checkbox"
-                name="agreement"
-                id="agreement"
-                required
-                aria-errormessage="agreement-errors"
+                    class="field__checkbox-input"
+                    type="checkbox"
+                    name="agreement"
+                    id="agreement"
+                    required
+                    aria-errormessage="agreement-errors"
                 >
-                <label class="field__label checkbox__label" for="agreement">Согласен на всё</label> <br>
-                
+                <label class="field__checkbox-label" for="agreement">Согласен на всё</label>
+
                 <span class="field__errors" id="agreement-errors" data-js-form-field-errors></span>
             </div>
             
-            <input type="submit" name="submit" value="Зарегистрироваться">
+            <input class="button" type="submit" name="submit" value="Зарегистрироваться">
         </form>
     </div>
 </body>
