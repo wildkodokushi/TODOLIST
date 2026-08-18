@@ -1,6 +1,7 @@
 .modal.active {
-    width: 100vw !important;
-    height: 100vh !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
     background-color: var(--color-white) !important;
     opacity: 1 !important;
     inset: 0 !important;

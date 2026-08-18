@@ -25,7 +25,8 @@ class Header {
     }
 
     stateClasses =  {
-        isVisible: 'is-visible'
+        isVisible: 'is-visible',
+        scrollLock: 'scroll-lock'
     }
     
     constructor(parent) {
@@ -46,6 +47,7 @@ class Header {
     }
 
     preloaderClose() {
+        document.body.classList.add(this.stateClasses.scrollLock)
         document.addEventListener('preloaderClose', () => {
             this.animateHeader()
         })
@@ -102,12 +104,13 @@ class Header {
         this.exitButton = createElement('button', {
             className: 'header__exit button',
             parent: this.action,
-            text: 'Выйти',
+            text: '',
             postion: this.position.afterbegin,
             attributes: {
                 'data-js-session-exit-button': ''
             },
             styles: {
+                position: 'relative',
                 display: 'none'
             }
         })

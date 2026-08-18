@@ -40,7 +40,7 @@ class HeaderMenu {
         })
 
         this.menuList = createElement('ul', {
-            className: 'header__manu-list',
+            className: 'header__menu-list',
             parent: this.element,
             styles: {
                 width: '100%',

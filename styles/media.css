@@ -1,10 +1,29 @@
+.header__exit::after {
+    content: 'Выход';
+}
+
 @media(max-width: 768px) {
     .header {
         height: 75px !important;
     }
 
-    /* .header__exit {
-        content: 'D';
-        content: url(../assets/icon/icon-check__dark.svg);
-    } */
+    .header__menu-list {
+        justify-content: start !important;
+        gap: 10px;
+    }
+
+    .header__logo {
+        display: none;
+    }
+
+    .header__exit::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        content: url(../assets/icon/icon__exit-dark.svg);
+    }
 }

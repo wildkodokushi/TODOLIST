@@ -9,52 +9,54 @@
 </head>
 <body>
     <div id="root" data-js-root>
-        <div class="todo" data-js-todo>
-            <h1 class="todo__title">To Do List</h1>
-            <form class="todo__form" data-js-todo-new-task-form>
-                <div class="todo__field field">
-                    <label class="field__label" for="new-task">New task title</label>
-                    <input 
-                        type="text" 
-                        class="field__input" 
-                        name="new-task" 
-                        id="new-task" 
-                        placeholder=" "
-                        autocomplete="off"
-                        data-js-todo-new-task-input
+        <div class="container">
+            <div class="todo" data-js-todo>
+                <h1 class="todo__title">To Do List</h1>
+                <form class="todo__form" data-js-todo-new-task-form>
+                    <div class="todo__field field">
+                        <label class="field__label" for="new-task">New task title</label>
+                        <input 
+                            type="text" 
+                            class="field__input" 
+                            name="new-task" 
+                            id="new-task" 
+                            placeholder=" "
+                            autocomplete="off"
+                            data-js-todo-new-task-input
+                        >
+                    </div>
+                    <button type="submit" class="todo__field-button button">
+                        Add
+                    </button>
+                </form>
+                <form class="todo__form" data-js-todo-search-task-form>
+                    <div class="todo__field field">
+                        <label class="field__label" for="search-task">Search task</label>
+                        <input 
+                            type="search" 
+                            class="field__input" 
+                            name="search-task" 
+                            id="search-task" 
+                            placeholder=" "
+                            data-js-todo-search-task-input
+                        >
+                    </div>
+                </form>
+                <div class="todo__info">
+                    <div class="todo__total-task">
+                        Total Tasks: <span data-js-todo-total-task>0</span>
+                    </div>
+                    <button 
+                        class="todo__delete-all-button button" 
+                        type="button"
+                        data-js-todo-delete-all-button
                     >
+                        Delete All
+                    </button>
                 </div>
-                <button type="submit" class="todo__field-button button">
-                    Add
-                </button>
-            </form>
-            <form class="todo__form" data-js-todo-search-task-form>
-                <div class="todo__field field">
-                    <label class="field__label" for="search-task">Search task</label>
-                    <input 
-                        type="search" 
-                        class="field__input" 
-                        name="search-task" 
-                        id="search-task" 
-                        placeholder=" "
-                        data-js-todo-search-task-input
-                    >
-                </div>
-            </form>
-            <div class="todo__info">
-                <div class="todo__total-task">
-                    Total Tasks: <span data-js-todo-total-task>0</span>
-                </div>
-                <button 
-                    class="todo__delete-all-button button" 
-                    type="button"
-                    data-js-todo-delete-all-button
-                >
-                    Delete All
-                </button>
+                <ul class="todo__list" data-js-todo-list></ul>
+                <div class="todo__empty-message" data-js-empty-message></div>
             </div>
-            <ul class="todo__list" data-js-todo-list></ul>
-            <div class="todo__empty-message" data-js-empty-message></div>
         </div>
         <form action="./register" class="form" method="post" novalidate data-js-form>
             <h1 class="form__title">Registration</h1>

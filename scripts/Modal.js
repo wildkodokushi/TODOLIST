@@ -15,15 +15,18 @@ class Modal {
     }
 
     stateClasses = {
-        active: 'active'
+        active: 'active',
+        scrollLock: 'scroll-lock'
     }
 
     open() {
         this.element.classList.add(this.stateClasses.active)
+        document.body.classList.add(this.stateClasses.scrollLock)
     }
 
     close() {
         this.element.classList.remove(this.stateClasses.active)
+        document.body.classList.remove(this.stateClasses.scrollLock)
     }
 
     render() {

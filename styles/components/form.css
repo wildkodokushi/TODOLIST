@@ -9,6 +9,7 @@
     justify-self: center;
     gap: 20px;
     color: var(--color-black);
+    margin-inline: 10px;
 }
 
 .form__title {
