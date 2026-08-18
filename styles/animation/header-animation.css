@@ -1,9 +1,19 @@
 .header:not(.is-visible) {
     opacity: 0;
 }
+
 .header:not(.is-visible):nth-child(odd) {
     translate: -50vw;
 }
+
 .header:not(.is-visible):nth-child(even) {
     translate: 50vw;
+}
+
+.header__logo:hover {
+    background-color: var(--color-accent) !important;
+}
+
+.header__exit.is-visible {
+    display: inline-block !important;
 }

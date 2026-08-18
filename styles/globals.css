@@ -1,6 +1,16 @@
 html.is-dark-theme {
     --color-black: var(--color-light);
     --color-white: var(--color-dark);
+
+    .field__checkbox-input::after,
+    .radio__control::after,
+    .todo-item__checkbox::after {
+        background: url(../assets/icon/icon-check__dark.svg) center/contain no-repeat;
+    }
+
+    #search-task:placeholder-shown {
+        background-image: url(../assets/icon/icon-search_light.svg);
+    }
 }
 
 body {
@@ -34,10 +44,6 @@ a, button, input {
         border-width: 3px;
         border-color: var(--color-accent);
     }
-}
-
-.header__logo:hover {
-    background-color: var(--color-accent) !important;
 }
 
 :focus-visible {

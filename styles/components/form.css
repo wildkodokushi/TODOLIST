@@ -130,12 +130,13 @@
     gap: 10px;
     border: var(--border-mini-elements);
     padding: 10px;
+
+    .radio__control::after {
+        width: 12px;
+        height: 12px;
+    }
 }
 
 .radio__control {
     border-radius: 100%;
-}
-
-.header__exit.is-visible {
-    display: inline-block !important;
 }
